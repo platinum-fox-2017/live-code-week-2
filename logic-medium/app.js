@@ -10,23 +10,21 @@ const generateJajarGenjang = (width, heigth) => {
     tempArray = []
     for (let j = 0; j < heigth; j++) {
         let space = ' '
-        tempArray.push(space.repeat(j + 1) + '\\' + space.repeat(width) + '\\')
+        tempArray.push(space.repeat(j) + '\\' + space.repeat(width + (width - heigth) + 1) + '\\')
         // tempArray.push(space.repeat(width + 1))
-        tempArray.push('\n')
     }
-    console.log(tempArray);
-
-    stringResult += tempArray.join(' ')
+    let miring = tempArray.join('\n')
+    stringResult += miring
 
     tempArray = []
-    // for (let i = 0; i < width; i++) {
-    //     tempArray.push('-')
-    // }
+    for (let i = 0; i < width; i++) {
+        tempArray.push('-')
+    }
+    let garisbawah = tempArray.join(' ')
+    stringResult += '\n' + ' '.repeat(heigth) + garisbawah
 
-    // stringResult += tempArray.join(' ')
-    // stringResult += '\n'
 
     return stringResult
 }
 
-console.log(generateJajarGenjang(5, 3))
+console.log(generateJajarGenjang(2, 3))
