@@ -1,11 +1,15 @@
 class Book {
-	constructor(title, author, totalPages, readingDays) {
+	constructor(title, author, totalPages) {
 		this.title = title;
 		this.author = author;
 		this._totalPages = totalPages;
-		this.readingDays = readingDays;
+		this.readingDays = this.generateReadingDays(totalPages);
 		this.isAvail = true;
 		this.borrower = '';
+	}
+
+	generateReadingDays(totalPages) {
+		return Math.ceil(totalPages/100);
 	}
 
 	get totalPages() {
