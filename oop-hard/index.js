@@ -1,3 +1,10 @@
+const fs = require('fs');
+const Reader = require('./reader')
+const Book = require('./book')
+const Journal = require('./journal')
+const Biography = require('./bio')
+const History = require('./history')
+
 class Library {
     constructor() {
         this.name = 'Perpustakaan Javascript'
@@ -12,30 +19,29 @@ class Library {
 
     borrow(book, reader) {
         let statusBook;
-        let statusBorrower;
-        // console.log(this.readers[0] === reader)
-        // console.log(this.readers[0] == reader)
-        // console.log(this.readers[0])
-        // console.log()
+        let statusBorrower = 0;
         for (let i = 0; i < this.list_book.length; i++) {
             if (this.readers[i] === reader.name) {
-                console.log(this.readers[i])
-                // for (let i = 0; i < this.list_book.length; i++) {
-                //     if (this.list_book[i].isAvail === true) {
-                //         if (this.list_book[i].title == book) {
-                //             this.list_book[i].isAvail = false
-                //             this.list_book[i].borrower = reader.name
-                //             statusBook = 'Buku Berhasil Dipinjam'
-                //         }
-                //     } else {
-                //         statusBook = 'Buku Sudah Dipinjam '
-                //     }
-                // }
-            } 
+                for (let i = 0; i < this.list_book.length; i++) {
+                    if (this.list_book[i].isAvail === true) {
+                        if (this.list_book[i].title == book) {
+                            this.list_book[i].isAvail = false
+                            this.list_book[i].borrower = reader.name
+                            statusBook = 'Buku Berhasil Dipinjam '
+                        }
+                    } else {
+                        statusBook = 'Buku Sudah Dipinjam '
+                    }
+                }
+               
+            }
         }
     
         this.list_book.push(this.list_book)
-        console.log(statusBorrower)
+        // console.log(statusBorrower)
+        // if (statusBorrower > 0) {
+        //     console.log('Daftar jadi member dulu')
+        // }
         console.log(statusBook)
     }
 
@@ -43,45 +49,10 @@ class Library {
         this.readers.push(reader)
     }
 
-}
-
-class Reader {
-    constructor(name, address, phone_num) {
-        this.name = name
-        this.address = address
-        this.phone_num = phone_num
+    save() {
+        // fs.writeFileSync('book.json', this.list_book, object)
     }
-}
 
-class Book {
-    constructor(title, author, total_page, reading_days, isAvail, borrower) {
-        this.title = title
-        this.author = author
-        this.total_page = total_page
-        this.reading_days = reading_days || null
-        this.isAvail = isAvail || true
-        this.borrower = borrower || null
-    }
-}
-
-class Journal extends Book {
-    constructor(name, author, total_page) {
-        super(name, author, total_page)
-    }
-}
-
-class Biography extends Book {
-    constructor(name, author, total_page, figure) {
-        super(name, author, total_page)
-        this.figure = figure
-    }
-}
-
-class History extends Book {
-    constructor(name, author, total_page, century) {
-        super(name, author, total_page)
-        this.century = century
-    }
 }
 
 let library = new Library()
@@ -107,6 +78,4 @@ library.borrow('Orang Dibalik Apple', gustaf)
 
 // console.log(library.list_book)
 
-
-
-console.log(library)
+// console.log(library)
