@@ -29,7 +29,7 @@ class Book {
     }
 
     estimationReadingDays(){
-        return Math.ceil(this._totalPage / 100)
+        return Math.ceil(this._totalPage / 100);
     }
 }
 

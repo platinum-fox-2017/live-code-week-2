@@ -1,1 +1,12 @@
-{"books":[{"_title":"Jatuh Bangun Seorang Fullstack","_author":"Kang Udin","_totalPage":89,"_readingDays":1,"_isAvail":true,"_peminjam":[]},{"_title":"Orang Dibalik Apple","_author":"Mas Bejo","_totalPage":327,"_readingDays":4,"_isAvail":false,"_peminjam":["Reza"],"_figure":"Steve Wozniak"},{"_title":"Awal Peradaban Callback","_author":"Bang Togar","_totalPage":127,"_readingDays":2,"_isAvail":true,"_peminjam":[],"_century":"Middle Earth"}],"members":[{"_nama":"Reza","_alamat":"Surabaya","_notelp":"081738318220"},{"_nama":"Ervan","_alamat":"Jakarta","_notelp":"081289371931"}]}
+{"books":
+    [
+        {"_title":"Jatuh Bangun Seorang Fullstack","_author":"Kang Udin","_totalPage":89,"_readingDays":1,"_isAvail":true,"_peminjam":[]},
+        {"_title":"Orang Dibalik Apple","_author":"Mas Bejo","_totalPage":327,"_readingDays":4,"_isAvail":false,"_peminjam":["Reza"],"_figure":"Steve Wozniak"},
+        {"_title":"Awal Peradaban Callback","_author":"Bang Togar","_totalPage":127,"_readingDays":2,"_isAvail":true,"_peminjam":[],"_century":"Middle Earth"}
+    ],
+"members":
+    [
+        {"_nama":"Reza","_alamat":"Surabaya","_notelp":"081738318220"},
+        {"_nama":"Ervan","_alamat":"Jakarta","_notelp":"081289371931"}
+    ]
+}
