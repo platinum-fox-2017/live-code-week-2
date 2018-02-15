@@ -40,7 +40,7 @@ untuk awal buka perpustakaan juga memiliki 3 buku yang siap untuk dibaca
   * **Title:** Awal Peradaban Callback
   * **Author:** Bang Togar
   * **Total Page:** 127
-  * **Figure:** Middle Earth
+  * **Century:** Middle Earth
 
 masukanlah 3 buku tersebut kedalam list buku perpustakaan
 
