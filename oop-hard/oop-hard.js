@@ -18,6 +18,10 @@ class Perpustakaan {
     }
   }
 
+  addReader(obj) {
+    this.pembaca.push(new Reader)
+  }
+
   get totalPages() {
     if(this._totalPages > 200) {
       return 'Banyak halamannya capek ngitungnya'
@@ -41,7 +45,7 @@ class Perpustakaan {
 
 class Reader {
   constructor(obj) {
-    this.name = obj.name
+    this.nama = obj.name
     this.alamat = obj.alamat
     this.notelp = obj.notelp
   }
@@ -120,12 +124,15 @@ console.log(biography.totalPages) // 'Banyak halamannya capek ngitungnya'
 console.log(journal.totalPages) // 89
 console.log(perpustakaan.book)
 
-let objPembaca = {}
-objPembaca.name = 'Wika'
-objPembaca.alamat = 'bekasi'
-objPembaca.notelp = '091297312397'
+let wika = {}
+wika.name = 'Wika'
+wika.alamat = 'bekasi'
+wika.notelp = '091297312397'
+// console.log(wika);
+perpustakaan.addReader(wika)
+// console.log(perpustakaan.pembaca);
 
-perpustakaan.borrow('Jatuh Bangung Seorang Fullstack', objPembaca) // Buku Berhasil Dipinjam
-console.log(perpustakaan.book)
-// xxxx.borrow([judulBuku], [namaPembaca]) // Buku Sudah Dipinjam
-perpustakaan.borrow('Jatuh Bangung Seorang Fullstack', objPembaca) // Buku Berhasil Dipinjam
+
+// perpustakaan.borrow('Jatuh Bangung Seorang Fullstack', wika) // Buku Berhasil Dipinjam
+// console.log(perpustakaan.book)
+// perpustakaan.borrow('Jatuh Bangung Seorang Fullstack', wika) // Buku Berhasil Dipinjam
