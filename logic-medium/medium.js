@@ -6,10 +6,23 @@ function generateJajarGenjang(row, col) {
         let arr = []
         result.push(arr)
         for (let j = 0; j < row; j++) {
-            arr.push(['-'])
+            arr.push('-')
         }
     }
     return result
 }
 
 console.log(generateJajarGenjang(5,4))
+
+// function generateJajarGenjang(input) {
+//     for (let i = 0; i < input; i++) {
+//         for (let j = 0; j < i; j++) {
+//             console.log('-')
+//         }
+//         for (let i = 0; i < input; i++) {
+//             console.log('\\')
+//         }
+//     }
+// }
+
+// generateJajarGenjang(5)
