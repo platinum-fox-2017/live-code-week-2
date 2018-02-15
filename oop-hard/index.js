@@ -22,21 +22,43 @@ class Library {
         return list.push(readers)
     }
 
-    borrow(book,readers) {
-        let list = this.book
-        // console.log(book,'<<<<<< book input')
-        // console.log(list,'<<<<<< list book')
-
-        // console.log(book.name === list[0].name,'true')
-        for (let i = 0; i < list.length;i++) {
-            if(book.name === list[i].name && list[i].is_avail === true) {
-                list[i].lend_to = readers.name
-                list[i].is_avail = false
-                console.log('Buku berhasil dipinjam')
-            } else {
-                console.log('Buku sudah dipinjam')
-            } break;
+    readerValidation(readers) {
+        let list = this.readers
+        let arrReader = []
+        for(let i = 0; i < list.length; i++) {
+            arrReader.push(list[i].name)
         }
+        // console.log(arrReader.indexOf(readers))
+        if(arrReader.indexOf(readers) === -1) {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    bookValidation(title,readers) {
+        let list = this.book
+        for (let i = 0; i < list.length;i++) {
+            if(title === list[i].title && list[i].is_avail === true) {
+                list[i].lend_to = readers
+                list[i].is_avail = false
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+    
+    borrow(book,readers) {
+        if (this.readerValidation(readers) === true) {
+            if(this.bookValidation(book,readers) === true) {
+                console.log(`Buku berhasil dipinjam`)
+            } else {
+                console.log(`Buku sudah dipinjam`)
+            }
+        } else if(this.readerValidation(readers) === false) {
+            console.log(`Daftar Jadi Member dulu`)
+        } 
     }
 
 }
@@ -59,7 +81,9 @@ library.addReaders(sherlock)
 library.addReaders(luffy)
 
 //borrow
-library.borrow(newJournal,sherlock)
+// library.bookValidation('Jatuh Bangun Seorang Fullstack','Holmes')
+library.borrow('Jatuh Bangun Seorang Fullstack','Holmes')
 console.log(library.book)
 // console.log(library.readers)
-library.borrow(newJournal,sherlock)
+// library.readerValidation('Holmes')
+// library.borrow('Orang Dibalik Ngaro','Holmes')
