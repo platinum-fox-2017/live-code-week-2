@@ -5,9 +5,6 @@ class Journal extends Book {
         super(title, author, totalPage);
     }
 
-    estimationReadingDays(){
-        return Math.ceil(this._totalPage / 100)
-    }
 }
 
 module.exports = Journal;

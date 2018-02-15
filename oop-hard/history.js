@@ -5,10 +5,7 @@ class History extends Book {
         super(title, author, totalPage);
         this._century = century;
     }
-
-    estimationReadingDays(){
-        return Math.ceil(this._totalPage / 100)
-    }
+    
 }
 
 module.exports = History;
