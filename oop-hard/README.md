@@ -94,6 +94,11 @@ untuk sekarang perpustakaan telah dibuka sekarang pembaca bisa mendaftar didalam
   xxxx.borrow([judulBuku], [namaPembaca]) // Buku Sudah Dipinjam
   ```
 
+
   ### RELEASE 2
+  - buatlah method addReader untuk menginput object pembaca kedalam property perpustakaan
+  - tambahkan validasi didalam method borrow untuk memvalidasi apakah pembaca ada didalam list pembaca. jika nama tidak ada didalam list object pembaca maka method akan mereturn 'Daftar jadi member dulu'
+
+  ### RELEASE 3
   - Pisahkan masing-masih class menjadi 1 class 1 file
   - input data buku dan peminjam kedalam file json
