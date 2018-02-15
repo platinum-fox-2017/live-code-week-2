@@ -1,1 +1,1 @@
-["'Jatuh Bangung Seorang Fullstack','Kang Udin',89,1,true","'Orang Dibalik Apple','Mas Bejo',327,4,true,'Farah','Steve Wozniak'","'Awal Peradaban Callback','Bang Togar',127,2,true,'Middle Earth'"]
+[{"title" : "Jatuh Bangung Seorang Fullstack","author":"Kang Udin","page":89,"days":1,"status":true},{"title" : "Orang Dibalik Apple","author":"Mas Bejo","page":327,"days":4,"status":true,"peminjam":"Farah","namalain":"Steve Wozniak"},{"title":"Awal Peradaban Callback","author":"Bang Togar","page":127,"days":2,"status":true,"namalain":"Middle Earth"}]

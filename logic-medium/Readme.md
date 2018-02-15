@@ -1,4 +1,4 @@
- # Jajaran Genjang 
+ # Jajaran Genjang
 
 buatlah sebuah function yang menerima 2 buah parameter berupa panjang dan lebar, kemudian generate sebuah bentuk jajaran genjang yang terbalik secara horizontal.
 Lihat contoh driver code ini
