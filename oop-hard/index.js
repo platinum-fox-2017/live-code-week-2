@@ -60,7 +60,6 @@ class Library {
             console.log(`Daftar Jadi Member dulu`)
         } 
     }
-
 }
 let library = new Library('Perpustakaan Java Script','Pondok Indah')
 
