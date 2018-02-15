@@ -3,6 +3,10 @@ const Biography = require('./biography.js')
 const History = require('./history.js')
 const Reader = require('./reader.js')
 
+const fs = require('fs')
+// const bookList = fs.readFileSync('./data.json', 'utf8')[0]
+// const member = fs.readFileSync('./data.json', 'utf8')[1]
+
 class Perpustakaan {
     constructor (){
         this._name = 'Perpustakaan Javascript'
@@ -18,6 +22,7 @@ class Perpustakaan {
                 if (this._genre[i]._isAvail === true){
                     this._genre[i]._borrower.push(new Reader(readerName))
                     this._genre[i]._isAvail = false
+                    fs.writeFileSync('./data.json', JSON.stringify(this._genre), 'utf8')
                     console.log('Buku Berhasil Dipinjam')
                 }
                 else {
@@ -28,53 +33,6 @@ class Perpustakaan {
     }
     get book(){
         return this._genre
-    }
-
-}
-
-class Book {
-    constructor(book){
-        this._title = book.title
-        this._author = book.author
-        this._pages = book.pages
-        this._readingDays = Math.ceil(book.pages/100)
-        this._borrower = []
-        this._isAvail = true;
-    }
-    get totalPages(){
-        if (this._pages > 200) {
-            return 'Banyak halamannya capek ngitungnya'
-        } else {
-            return this._pages
-        }
-    }
-}
-
-class Journal extends Book {
-    constructor(book){
-        super (book)
-    }
-}
-
-class Biography extends Book {
-    constructor(book){
-        super (book)
-        this._figure = book.figure
-    }
-}
-
-class History extends Book {
-    constructor(book){
-        super (book)
-        this._century = book.century
-    }
-}
-
-class Reader {
-    constructor(profile){
-        this._name = profile.name
-        this._address = profile.address
-        this._phone = profile.phone
     }
 }
 
@@ -97,6 +55,7 @@ let togar = {
     pages: 127,
     century: 'Middle Earth' 
 }
+console.log(JSON.stringify([udin, bejo, togar]))
 
 let perpustakaan = new Perpustakaan()
 
@@ -104,8 +63,8 @@ let journal = new Journal(udin)
 let biography = new Biography(bejo)
 let history = new History(togar)
 
-console.log(biography.totalPages)
-console.log(journal.totalPages)
+console.log(biography.totalPages)   // Banyak halamannya capek ngitungnya
+console.log(journal.totalPages)     // 89
 
 perpustakaan.addBook(journal)
 perpustakaan.addBook(biography)

@@ -5,3 +5,5 @@ class Journal extends Book {
         super (book)
     }
 }
+
+module.exports = Journal
