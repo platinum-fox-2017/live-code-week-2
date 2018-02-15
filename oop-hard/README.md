@@ -127,4 +127,4 @@ untuk sekarang perpustakaan telah dibuka sekarang pembaca bisa mendaftar didalam
 
   ### RELEASE 3
   - Pisahkan masing-masih class menjadi 1 class 1 file
-  - input data buku dan peminjam kedalam file json
+  - input data buku dan Readers kedalam file json
