@@ -33,16 +33,19 @@ class Library {
                         statusBook = 'Buku Sudah Dipinjam '
                     }
                 }
-               
+            } else {
+                statusBorrower++
+                
             }
         }
-    
+
         this.list_book.push(this.list_book)
         // console.log(statusBorrower)
-        // if (statusBorrower > 0) {
-        //     console.log('Daftar jadi member dulu')
-        // }
-        console.log(statusBook)
+        if (statusBorrower > 0) {
+            console.log(statusBook)   
+        }
+       
+        console.log('Daftar jadi member dulu')
     }
 
     addReader(reader) {
@@ -50,7 +53,8 @@ class Library {
     }
 
     save() {
-        // fs.writeFileSync('book.json', this.list_book, object)
+        console.log(this.list_book)
+        fs.writeFileSync('book.json', JSON.stringify(this.list_book))
     }
 
 }
@@ -72,10 +76,13 @@ if (bio.total_page > 150) {
 // console.log(journal.total_page)
 // console.log(library.list_book)
 
-library.addReader('Gustaf')
+// library.addReader('Gustaf')
 library.borrow('Orang Dibalik Apple', gustaf)
 // library.borrow('Orang Dibalik Apple', gustaf)
 
 // console.log(library.list_book)
 
 // console.log(library)
+
+//save file
+// library.save()
