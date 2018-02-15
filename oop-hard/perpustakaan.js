@@ -1,3 +1,4 @@
+const fs = require('fs')
 // RELEASE 2
 
 //     buatlah method addReader untuk menginput object pembaca kedalam property perpustakaan
@@ -57,7 +58,17 @@ class Perpustakaan{
 
   writeFile(){
     let data = this.books
-    console.log(data)
+    // console.log(data)
+    let arrData =[]
+    for(let i=0;i<this.books.length;i++){
+      let obj = {
+        dataBuku : this.books[i],
+        peminjam: this.books[i].peminjam
+      }
+      arrData.push(obj)
+    }
+    // console.log(arrData)
+    fs.writeFileSync('databuku.json',JSON.stringify(arrData),'utf8')
   }
 }
 

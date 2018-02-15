@@ -62,7 +62,7 @@ perpustakaan.borrowBook('Awal Peradaban callback', budi)// Buku Berhasil Dipinja
 //   xxxx.borrow([judulBuku], [namaPembaca]) // Buku Sudah Dipinjam
 // console.log(perpustakaan.books)
 perpustakaan.addReader()
-console.log(perpustakaan)
+// console.log(perpustakaan)
 let alice =new Reader('Alice','Jakarta barat','021445123456')
 // console.log(perpustakaan.borrowBook('Orang Dibalik Apple',alice))
-console.log(perpustakaan.writeFile())
+perpustakaan.writeFile()

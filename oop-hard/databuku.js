@@ -1,0 +1,1 @@
+[{"buku":"Jatuh Bangung Seorang Fullstack","peminjam":{"nama":"Ani","alamat":"Jakarta selatan","notelp":"021123456"}},{"buku":"Orang Dibalik Apple","peminjam":null},{"buku":"Awal Peradaban callback","peminjam":{"nama":"Budi","alamat":"Jakarta selatan","notelp":"021445123456"}}]
