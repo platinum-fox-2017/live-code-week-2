@@ -1,86 +1,8 @@
-class Library {
-    constructor(book) {
-        this.book = []
-        this.member = []
-    }
-
-    addBook(book) {
-        this.book.push(book)
-    }
-
-    addMember(member) {
-        this.member.push(member)
-    }
-
-    borrow(title, reader) {
-        if (title.isAvail === true) {
-            for (let i = 0; i < this.member.length; i++) {
-                if (reader.name === this.member[i].name) {
-                    title.isAvail = false
-                    title.rent = reader.name
-                    console.log('Buku Berhasil Dipinjam')
-                } else {
-                    console.log('Jadi member dulu');
-
-                }
-            }
-        } else {
-            console.log('Buku Sudah Dipinjam')
-        }
-    }
-}
-
-class Book {
-    constructor(title, author, total_page) {
-        this.title = title
-        this.author = author
-        this.total_page = total_page
-        this.reading_days = Math.round(total_page / 100)
-        this.rent = ''
-        this.isAvail = true
-    }
-
-    totalPages() {
-        if (this.total_page > 200) {
-            return `Banyak halamannya capek ngitungnya`
-        } else {
-            return this.total_page
-        }
-    }
-
-
-
-}
-
-class Journal extends Book {
-    constructor(title, author, total_page) {
-        super(title, author, total_page)
-    }
-
-}
-
-class Biography extends Book {
-    constructor(title, author, total_page, figure) {
-        super(title, author, total_page)
-        this.figure = figure
-    }
-}
-
-class History extends Book {
-    constructor(title, author, total_page, century) {
-        super(title, author, total_page)
-        this.century = century
-    }
-}
-
-class Reader {
-    constructor(name, address, phone) {
-        this.name = name
-        this.address = address
-        this.phone = phone
-    }
-}
-
+const Reader = require('./reader')
+const Library = require('./library')
+const Journal = require('./journal')
+const Biography = require('./biography')
+const History = require('./history')
 
 let andrew = new Reader('andrew', 'syahdan', '085880016822')
 let kusuma = new Reader('kusuma', 'binus', '66666666')
@@ -103,7 +25,8 @@ library.addBook(history)
 library.addMember(andrew)
 // console.log(library)
 
-// library.borrow(journal, andrew)
-library.borrow(journal, kusuma)
+library.borrow(journal, andrew)
+// library.readFile()
+// library.borrow(journal, kusuma)
 // console.log(library)
 
