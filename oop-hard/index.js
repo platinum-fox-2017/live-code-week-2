@@ -17,12 +17,16 @@ perpus.addBooks(history1)
 
 let amarta = new Reader ('Amarta','Jl. Surga Neraka No. 17','081224664707')
 let jojobi = new Reader ('Jojobi','Jl. Surga Semua No. 11','08112983192')
+let agrha = new Reader ('Agrha','Jl. Neraka Semua No. 99','08112131192')
 perpus.addReader(amarta)
 perpus.addReader(jojobi)
 // console.log(perpus.borrowBooks('agrha',amarta))
 perpus.borrowBooks('Jatuh Bangun Seorang Fullstack',amarta)
 perpus.borrowBooks('Jatuh Bangun Seorang Fullstack',jojobi)
+console.log(perpus.borrowBooks('Jatuh Bangun Seorang Fullstack',jojobi));
 perpus.borrowBooks('Awal Peradaban Callback',jojobi)
-console.log(perpus.readers);
-console.log(amarta);
+console.log(perpus.borrowBooks('Awal Peradaban Callback',jojobi));
+console.log(perpus.borrowBooks('Awal Peradaban Callback',agrha))
+// console.log(perpus.readers);
+// console.log(amarta);
 // console.log(journal1);
