@@ -10,6 +10,8 @@ class Journal {
             this._totalPages = pages
             this.readingDays = Math.ceil(this._totalPages/100)
         }
+        this.lend_to = null
+        this.is_avail = true
     }
 }
 

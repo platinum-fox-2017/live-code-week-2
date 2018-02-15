@@ -11,6 +11,8 @@ class History {
             this.readingDays = Math.ceil(this._totalPages/100)
         }
         this.century = century
+        this.lend_to = null
+        this.is_avail = true
     }
 }
 

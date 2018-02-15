@@ -10,6 +10,8 @@ class Biography {
             this.readingDays = Math.ceil(this._totalPages/100)
         }
         this.figure = figure
+        this.lend_to = null
+        this.is_avail = true
     }
 }
 
