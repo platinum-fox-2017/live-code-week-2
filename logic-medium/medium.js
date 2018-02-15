@@ -1,19 +1,19 @@
 function generateJajarGenjang(num1, num2) {
-  for (var i = 0; i < num2; i++) {
+  for (var i = 0; i < num2+2; i++) {
     var temp = ''
     let space = ''
     for (var j = 0; j <= i; j++) {
       if (j === 0) {
         space += ' '
-        temp += space + '| ----- |' + '\n'
+        temp += space + ' ----- ' + '\n'
       }
       else if (j === i) {
         space += ' '
-        temp += space + '| ----- |' + '\n'
+        temp += space + ' ----- ' + '\n'
       }
       else {
         space += ' '
-        temp += space + '|       |' + '\n'
+        temp += space + '|      |' + '\n'
 
       }
     }
