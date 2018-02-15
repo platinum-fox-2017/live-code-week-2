@@ -1,0 +1,17 @@
+[
+    {
+        "book": {
+            "title": "Jatuh Bangung Seorang Fullstack",
+            "author": "Kang Udin",
+            "total_page": 89,
+            "reading_days": 1,
+            "rent": "andrew",
+            "isAvail": false
+        },
+        "renter": {
+            "name": "andrew",
+            "address": "syahdan",
+            "phone": "085880016822"
+        }
+    }
+]
