@@ -89,7 +89,8 @@ untuk sekarang perpustakaan telah dibuka sekarang pembaca bisa mendaftar didalam
 
   contoh test Case
   ```javascript
-  xxxx.borrow([judulBuku], [namaPembaca]) // Buku Berhasil Dipinjam
+  xxxx.
+  ([judulBuku], [namaPembaca]) // Buku Berhasil Dipinjam
   // atau
   xxxx.borrow([judulBuku], [namaPembaca]) // Buku Sudah Dipinjam
   ```
