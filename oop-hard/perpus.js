@@ -6,22 +6,25 @@ class Perpus{
   constructor(name,alamat){
     this._name=name
     this._alamat=alamat
-    this._kumpulanBuku=this.addBuku()
+    this._kumpulanBuku=[]
+
   }
   addBuku(name,title,author,totalPages,readingDays,isAvail){
-    let arrBuku=[]
+
     if(name==='Journal'){
-        arrBuku.push(new Journal(title,author,totalPages,readingDays,isAvail))
+        this._kumpulanBuku.push(new Journal(title,author,totalPages,readingDays,isAvail))
     }
     else if(name==='Biography'){
-        arrBuku.push(new Biography(title,author,totalPages,readingDays,isAvail))
+        this._kumpulanBuku.push(new Biography(title,author,totalPages,readingDays,isAvail))
     }
     else if(name==='History'){
-        arrBuku.push(new History(title,author,totalPages,readingDays,isAvail))
+        this._kumpulanBuku.push(new History(title,author,totalPages,readingDays,isAvail))
     }
-    // console.log(arrBuku)
-    console.log(arrBuku)
+
+    return this._kumpulanBuku
   }
+
+
 
 }
 
@@ -36,9 +39,6 @@ class Buku{
   }
 
 
-  totalPages(){
-    console.log(newPerpus)
-  }
 
 }
 
@@ -47,33 +47,21 @@ class Journal extends Buku{
     super(title,author,totalPages,readingDays,isAvail)
 
   }
-  totalPages(){
 
-    console.log(newPerpus);
-  }
 
 }
 
 class Biography extends Buku{
   constructor(title,author,totalPages,readingDays,isAvail){
     super(title,author,totalPages,readingDays,isAvail)
-    // this._title='Orang Dibalik Apple'
-    // this._author='Mas Bejo'
-    // this._totalPages= 327,
-    // this._readingDays= 4,
-    // this._isAvail=true
      this._figure= 'Steve Wozniak'
   }
 }
 
+
 class History extends Buku{
-  constructor(title,author,totalPages,readingDays,isAvail){
-    super(title,author,totalPages,readingDays,isAvail)
-    // this._title= 'Awal Peradaban Callback',
-    // this._author= 'Bang Togar',
-    // this._totalPages= 127,
-    // this._readingDays= 2,
-    // this._isAvail= true,
+  constructor(name,title,author,totalPages,readingDays,isAvail){
+    super(name,title,author,totalPages,readingDays,isAvail)
     this._century= 'Middle Earth'
   }
 }
@@ -94,10 +82,11 @@ class Readers{
 let newPerpus=new Perpus('Perpustakaan Javascript','Pondok Indah')
 let newBiography=new Biography()
 let newJournal=new Journal()
-newJournal.totalPages();
+
 // console.log(newBiography)
 newPerpus.addBuku('Journal','Jatuh Bangung Seorang Fullstack','Kang Udin',89,1,true)
 newPerpus.addBuku('Biography','Orang Dibalik Apple','Mas Bejo','327','4',true,'Steve Wozniak')
 newPerpus.addBuku('History','Awal Peradaban Callback,Bang Togar',127,2,true,'Middle Earth')
+
 
 console.log(newPerpus._kumpulanBuku)
