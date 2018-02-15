@@ -12,14 +12,14 @@ class Library {
     constructor(name, location) {
         this.name = name
         this.location = location
-        this.book = []
+        this.book = this.readfile(bookfile)
         this.reader = []
     }
 
     readfile(file, data) {
-        let temp = fs.readFileSync(file,data,'utf8')
+        let temp = fs.readFileSync(file,'utf8')
         temp = JSON.parse(temp)
-        return
+        return temp;
     }
     
     addJournalBook(title, author, total_page) {

@@ -10,11 +10,6 @@ class Book {
         this.borrower = ''
     }
 
-    addReader(readerName) {
-        this.borrower = readerName;
-        this.isAvail = false;
-    }
-
     generateReadingDays(page) {
         return Math.ceil(page/100)
     }
@@ -22,6 +17,11 @@ class Book {
     generateTotalPage(page) {
         if(page>200) return "Banyak halamannya capek ngitungnya";
         return page
+    }
+
+    addReader(readerName) {
+        this.borrower = readerName;
+        this.isAvail = false;
     }
 }
 
