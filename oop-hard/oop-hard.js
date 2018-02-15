@@ -3,7 +3,7 @@ class Library {
     this._address = 'Pondok Indah'
     this._owner = 'Saudagar Kaya'
     this._genre = []
-    this._totalBooks = 'number'//ganti
+    this._totalBooks = 3
     this._readers = []
   }
 
@@ -21,19 +21,26 @@ class Library {
     return arrBooks;
   }
 
-  isAvail() {
-
+  get totalBooks() {
+    return this.generate_books().length
   }
 
   borrow(title, reader) {
     let listOfBooks = this.generate_books()
-    for(let i = 0; i < listOfBooks; i++) {
-      if(title === listOfBooks[i].title) {
+    let success = false
+    for(let i = 0; i < listOfBooks.length; i++) {
+      if(title === listOfBooks[i]._title && listOfBooks[i]._isAvail === true) {
         listOfBooks[i]._isAvail = false
         listOfBooks[i]._borrower = reader
+        success = true
       }
     }
-    console.log(listOfBooks)
+
+    if(success) {
+      console.log(`Buku Berhasil Dipinjam`)
+    } else {
+      console.log(`Buku Sudah Dipinjam`)}
+    // console.log(listOfBooks)
   }
 }
 
@@ -44,7 +51,7 @@ class Books {
     this._author = objBooks.author
     this._totalPages = objBooks.totalPages
     this._readingDays = objBooks.readingDays
-    this._isAvail = objBooks.isAvail
+    this._isAvail = true
     this._borrower
   }
 
@@ -54,17 +61,6 @@ class Books {
     } else {
       return this._totalPages
     }
-  }
-
-  borrow(title, reader) {
-    let listOfBooks = lib.generate_books()
-    for(let i = 0; i < listOfBooks; i++) {
-      if(title === listOfBooks[i].title) {
-        listOfBooks[i]._isAvail = false
-        listOfBooks[i]._borrower = reader
-      }
-    }
-    console.log(listOfBooks)
   }
 }
 
@@ -89,10 +85,10 @@ class History extends Books {
 }
 
 let lib = new Library()
-let books = new Books({title: 'Jatuh Bangun Seorang Fullstack', genre: 'Journal',author: 'Kang Udin', totalPages: 89, readingDays: 1, isAvail: true})
-// let books = [ {title: 'Jatuh Bangun Seorang Fullstack', genre: 'Journal',author: 'Kang Udin', totalPages: 89, readingDays: 1, isAvail: true}, 
-//               {title: 'Orang Dibalik Apple', genre: 'Biography', author: 'Mas Bejo', totalPages: 327, readingDays: 4, isAvail: true, figure: 'Steve Wozniak'},
-//               {title: 'Awal Peradaban Callback', genre: 'History', author: 'Bang Togar', totalPages: 127, readingDays: 2, isAvail: true, century: 'Middle Earth'}]
+// let books = new Books({title: 'Jatuh Bangun Seorang Fullstack', genre: 'Journal',author: 'Kang Udin', totalPages: 89, readingDays: 1, isAvail: true})
+let books = [ {title: 'Jatuh Bangun Seorang Fullstack', genre: 'Journal',author: 'Kang Udin', totalPages: 89, readingDays: 1, isAvail: true}, 
+              {title: 'Orang Dibalik Apple', genre: 'Biography', author: 'Mas Bejo', totalPages: 327, readingDays: 4, isAvail: true, figure: 'Steve Wozniak'},
+              {title: 'Awal Peradaban Callback', genre: 'History', author: 'Bang Togar', totalPages: 127, readingDays: 2, isAvail: true, century: 'Middle Earth'}]
 // console.log(lib.generate_books())
 
 let journal = new Journal({title: 'Jatuh Bangun Seorang Fullstack', genre: 'Journal',author: 'Kang Udin', totalPages: 89, readingDays: 1, isAvail: true});
@@ -116,9 +112,10 @@ class Readers {
   }
 }
 
-let member = {name: 'Acim',address: 'Jakarta',phone: '87414681', books: 'Orang Dibalik Apple'}
+let member = {name: 'Acim',address: 'Jakarta',phone: '87414681', books: 'Awal Peradaban Callback'}
 let reader = new Readers(member)
 // console.log(reader)
 
-lib.generate_books()
-books.borrow('Orang Dibalik Apple', 'Acim')
+lib.borrow('Awal Peradaban Callback', 'Acim')
+// console.log(lib.generate_books())
+// books.borrow('Orang Dibalik Apple', 'Acim')
