@@ -2,7 +2,14 @@ function generateJajarGenjang (l,h){
     let area = ""
     let startDown = 0
     let endDown = startDown + l
-    let startEnd = Math.floor((l+h)/2)
+    let startEnd;
+    if(l < h){
+        startEnd = Math.floor((l+h)/2) + 1
+    }else if(h >= l){
+        startEnd = Math.floor((l+h)/2)
+    }
+    
+    
     for(let i = 0; i < h + 2; i++){
         let realLenght = l+ h
         let tmp = ""
@@ -24,8 +31,7 @@ function generateJajarGenjang (l,h){
                 }
             } 
             else if(i === h + 1 && j >= startEnd){
-                console.log(j)
-                console.log(startEnd)
+                
                 if(j === startEnd){
                     tmp += "- "
                 }else{
