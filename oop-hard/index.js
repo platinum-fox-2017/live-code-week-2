@@ -3,27 +3,43 @@ const Journal = require('./journal')
 const Biography = require('./biography')
 const History = require('./history')
 const Readers = require('./readers')
+const fs = require('fs')
 
 class Library {
-    constructor(name,address) {
-        this.name = name
-        this.address = address
-        this.book = []
-        this.readers = []
+    constructor() {
+        this.name = 'Perpustakaan Java Script'
+        this.address = 'Pondok Indah'
     }
 
-    addBook(book) {
-        let list = this.book
-        return list.push(book)
+    static getData() {
+        let database = fs.readFileSync('./library.json','utf-8')
+        let data = JSON.parse(database)
+        return data
     }
 
-    addReaders(readers) {
-        let list = this.readers
-        return list.push(readers)
+    static addBook(book) {
+        let data = this.getData()
+        data.push(book)
+        let newData = JSON.stringify(data)
+        fs.writeFileSync('./library.json',newData)
+        return data
+    }
+    static getDataReaders() {
+        let database = fs.readFileSync('./reader.json','utf-8')
+        let data = JSON.parse(database)
+        return data
     }
 
-    readerValidation(readers) {
-        let list = this.readers
+    static addReaders(readers) {
+        let data = this.getDataReaders()
+        data.push(readers)
+        let newData = JSON.stringify(data)
+        fs.writeFileSync('./reader.json',newData)
+        return data
+    }
+
+    static readerValidation(readers) {
+        let list = this.getDataReaders()
         let arrReader = []
         for(let i = 0; i < list.length; i++) {
             arrReader.push(list[i].name)
@@ -36,8 +52,8 @@ class Library {
         }
     }
 
-    bookValidation(title,readers) {
-        let list = this.book
+    static bookValidation(title,readers) {
+        let list = this.getData()
         for (let i = 0; i < list.length;i++) {
             if(title === list[i].title && list[i].is_avail === true) {
                 list[i].lend_to = readers
@@ -49,7 +65,7 @@ class Library {
         }
     }
     
-    borrow(book,readers) {
+    static borrow(book,readers) {
         if (this.readerValidation(readers) === true) {
             if(this.bookValidation(book,readers) === true) {
                 console.log(`Buku berhasil dipinjam`)
@@ -61,7 +77,7 @@ class Library {
         } 
     }
 }
-let library = new Library('Perpustakaan Java Script','Pondok Indah')
+// let library = new Library('Perpustakaan Java Script','Pondok Indah')
 
 let newJournal = new Journal('Jatuh Bangun Seorang Fullstack','Kang Udin',89)
 let newBiography = new Biography('Orang Dibalik Ngaro','Mas Bejo',327,'Steve Wozniak')
@@ -71,18 +87,18 @@ let sherlock = new Readers('Holmes','221B Baker Street',08098999)
 let luffy = new Readers('Luffy','Grand Line',0217896547)
 
 //add book to library
-library.addBook(newJournal)
-library.addBook(newBiography)
-library.addBook(newHistory)
+Library.addBook(newJournal)
+Library.addBook(newBiography)
+Library.addBook(newHistory)
 
 //add readers to library
-library.addReaders(sherlock)
-library.addReaders(luffy)
+Library.addReaders(sherlock)
+Library.addReaders(luffy)
 
 //borrow
 // library.bookValidation('Jatuh Bangun Seorang Fullstack','Holmes')
-library.borrow('Jatuh Bangun Seorang Fullstack','Holmes')
-console.log(library.book)
+// Library.borrow('Jatuh Bangun Seorang Fullstack','Holmes')
+console.log(Library.getData())
 // console.log(library.readers)
 // library.readerValidation('Holmes')
 // library.borrow('Orang Dibalik Ngaro','Holmes')
