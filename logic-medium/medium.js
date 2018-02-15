@@ -1,15 +1,23 @@
 function generateJajarGenjang(num1, num2) {
+  var tempStrip = ''
+  var space = ''
+  for (var i = 0; i < num1; i++) {
+    // if (i === num1-1) {
+    tempStrip += '-'
+    // }
+
+  }
   for (var i = 0; i < num2+2; i++) {
     var temp = ''
     let space = ''
     for (var j = 0; j <= i; j++) {
       if (j === 0) {
         space += ' '
-        temp += space + ' ----- ' + '\n'
+        temp += space + tempStrip + '\n'
       }
       else if (j === i) {
         space += ' '
-        temp += space + ' ----- ' + '\n'
+        temp += space + tempStrip + '\n'
       }
       else {
         space += ' '
@@ -17,9 +25,7 @@ function generateJajarGenjang(num1, num2) {
       }
     }
   }
-  for (var i = 0; i < num1; i++) {
-
-  }
+  // console.log(tempStrip);
   return temp
 }
 
