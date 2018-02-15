@@ -29,6 +29,6 @@ function generateJajarGenjang(width, height) {
 }
 
 
-generateJajarGenjang(5,6)
+generateJajarGenjang(5,4)
 generateJajarGenjang(3,3)
 generateJajarGenjang(2,4)
