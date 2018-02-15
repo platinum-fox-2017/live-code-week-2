@@ -22,6 +22,7 @@ class Journal extends Perpustakaan {
         this._totalPage = totalPage
         this.readingDays = 1
         this.isAvail = true
+        // thi = []
     }
     get totalPages(){
         return this._totalPage
@@ -56,7 +57,9 @@ class History extends Perpustakaan {
 
 class Readers {
     constructor(nama, alamat, telp){
-        
+        this.nama = nama
+        this.alamat = alamat
+        this.telp = telp
     }
 }
 
@@ -72,3 +75,9 @@ console.log(journal.totalPages) // 89
 
 perpustakaan.addBook()
 console.log(perpustakaan.book)
+
+
+// xxxx.borrow([judulBuku], [namaPembaca])
+let peminjam = ['Jatuh Bangung Seorang Fullstack', 'Yohanes']
+// perpustakaan.borrow(peminjam[0], [peminjam[1]])
+
