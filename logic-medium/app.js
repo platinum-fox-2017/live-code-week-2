@@ -28,3 +28,9 @@ const generateJajarGenjang = (width, heigth) => {
 }
 
 console.log(generateJajarGenjang(2, 3))
+console.log('PEMBATAS')
+console.log(generateJajarGenjang(3, 3))
+console.log('PEMBATAS')
+console.log(generateJajarGenjang(4, 3))
+console.log('PEMBATAS')
+console.log(generateJajarGenjang(5, 3))
