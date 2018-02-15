@@ -4,6 +4,7 @@ class Readers {
     this.name = name
     this.alamat = alamat
     this.notelp = notelp
+    this.borrowing = ''
   }
 }
 

@@ -1,5 +1,4 @@
 
-
 class Perpustakaan {
   constructor(books, readers) {
     this.book = books
@@ -13,6 +12,7 @@ class Perpustakaan {
           if(this.book[i].title === bookName) {
             if(this.book[i].isAvail === true) {
               this.book[i].borrower = readerName
+              this.pembaca[p].borrowing = bookName
               this.book[i].isAvail = false
               return console.log('Buku Berhasil Dipinjam');
             } else {

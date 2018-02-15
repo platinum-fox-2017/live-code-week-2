@@ -24,6 +24,7 @@ let readers = [readerA, readerB, readerC];
 // console.log(bookCollection);
 // console.log(readers);
 // console.log(history.totalPages)
+// console.log(journal.totalPages)
 
 let perpustakaan = new Perpustakaan(bookCollection, readers);
 
