@@ -2,10 +2,10 @@
 function generatejajarGenjang(panjang,lebar){
   let result = []
 
-  for (var i = 0; i < lebar; i++) {
+  for (var i = 0; i < lebar+2; i++) {
     let array = []
     for (var j = 0; j <= lebar+panjang; j++) {
-      if(i === 0 || i === lebar-1){
+      if(i === 0 || i === lebar+1){
         if(j >= 0 && j <= lebar){
           array.push('-')
         } else {
