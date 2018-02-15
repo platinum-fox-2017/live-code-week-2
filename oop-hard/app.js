@@ -1,21 +1,29 @@
 class Library {
     constructor(book) {
         this.book = []
+        this.member = []
     }
 
     addBook(book) {
         this.book.push(book)
     }
 
-    borrow(title, reader) {
-        console.log('Masuk')
-        console.log(title)
-        console.log(reader)
+    addMember(member) {
+        this.member.push(member)
+    }
 
+    borrow(title, reader) {
         if (title.isAvail === true) {
-            title.isAvail = false
-            title.rent = reader.name
-            console.log('Buku Berhasil Dipinjam');
+            for (let i = 0; i < this.member.length; i++) {
+                if (reader.name === this.member[i].name) {
+                    title.isAvail = false
+                    title.rent = reader.name
+                    console.log('Buku Berhasil Dipinjam')
+                } else {
+                    console.log('Jadi member dulu');
+
+                }
+            }
         } else {
             console.log('Buku Sudah Dipinjam')
         }
@@ -92,8 +100,10 @@ library.addBook(bio)
 let history = new History('Awal Peradaban Callback', 'Bang Togar', 127, 'Middle Earth')
 // console.log(history)
 library.addBook(history)
+library.addMember(andrew)
+// console.log(library)
 
-library.borrow(journal, andrew)
+// library.borrow(journal, andrew)
 library.borrow(journal, kusuma)
 // console.log(library)
 
