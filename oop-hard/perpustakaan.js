@@ -17,6 +17,7 @@ class Perpustakaan{
   }
 
   borrowBook(judulBuku,objPembaca){
+    
     // console.log(judulBuku,objPembaca.nama)
     // for(let b=0;b<this.pembaca.length;b++){
     //   if(objPembaca.name !== this.pembaca[b].name){

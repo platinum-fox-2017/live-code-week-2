@@ -1,13 +1,22 @@
+// \
+//   \
+//     \
+
+
 function generateJajarGenjang(panjang,lebar){
-  let test = ''
-  for(let i=0;i<lebar;i++){
-    for(let j=0;j<panjang;j++){
-      test+= '|'
-      j++
+  let jajar = ''
+  let count = 0
+  for(let i=0;i<panjang;i++){
+    for(let j =i;j<lebar;j++){
+      jajar+= '|'
     }
+    
   }
-  console.log(test)
+  
+ console.log(jajar)
 }
+
+
 
 
 
