@@ -4,6 +4,7 @@ class Perpustakaan {
         this.author = author;
         this._totalPages = totalPages;
         this.readingDays = Math.ceil(this._totalPages/100);
+        this.readers = [];
     }
 
     get book() {
@@ -14,6 +15,11 @@ class Perpustakaan {
 
         return arrBook;
     }
+
+    addReaders(objReaders) {
+        this.readers.push(objReaders);
+    }
+
 
 }
 
@@ -42,6 +48,7 @@ class Journal extends Perpustakaan {
                 console.log('Buku Berhasil Dipinjam');
                 this.isAvail = false;
                 this.borrower = borrowerName;
+                this.readers.push(borrowerName);
             }
         } else {
             console.log('Tidak ada buku dengan nama tersebut')
@@ -57,8 +64,8 @@ class Biography extends Perpustakaan {
     constructor(title,author,totalPages,figure) {
         super(title,author,totalPages)
         this.isAvail = true;
-        this.figure = figure;
         this.borrower = '';
+        this.figure = figure;
 
     }
 
@@ -79,6 +86,7 @@ class Biography extends Perpustakaan {
                 console.log('Buku Berhasil Dipinjam');
                 this.isAvail = false;
                 this.borrower = borrowerName;
+                this.readers.push(borrowerName);
             }
         } else {
             console.log('Tidak ada buku dengan nama tersebut')
@@ -92,8 +100,8 @@ class History extends Perpustakaan {
     constructor(title,author,totalPages,century) {
         super(title,author,totalPages)
         this.isAvail = true;
-        this.century = century;
         this.borrower = '';
+        this.century = century;
     }
 
     get totalPages() {
@@ -113,6 +121,7 @@ class History extends Perpustakaan {
                 console.log('Buku Berhasil Dipinjam');
                 this.isAvail = false;
                 this.borrower = borrowerName;
+                this.readers.push(borrowerName);
             }
         } else {
             console.log('Tidak ada buku dengan nama tersebut')
@@ -129,11 +138,11 @@ var perpustakaan = new Perpustakaan();
 
 
 
-//RELEASE 1 TEST CASE
+//RELEASE 2 TEST CASE
 
-journal.borrow('Jatuh Bangung Seorang Fullstack','Kang Tatang');
+// journal.borrow('Jatuh Bangung Seorang Fullstack','Kang Tatang');
 
-console.log(perpustakaan.book)
+// console.log(perpustakaan.book)
 
-journal.borrow('Jatuh Bangung Seorang Fullstack','Kang Tatang');
+// journal.borrow('Jatuh Bangung Seorang Fullstack','Kang Tatang');
 
