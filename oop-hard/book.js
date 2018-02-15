@@ -1,4 +1,4 @@
-let arrmember =[] 
+    let arrmember =[] 
 class Book{
     constructor(title, author, total_page){
         this.title = title
@@ -13,7 +13,8 @@ class Book{
         return arrmember
     }
     borrow(title, borrower){
-        if(arrmember.indexOf(borrower)===0){
+        let member = this.addMember()
+        if(member.indexOf(borrower)===0){
             if(this.title === title && this.isAvail===true){
                 this.borrower = borrower
                 this.isAvail = false

@@ -29,4 +29,5 @@ biography.addMember('sahara')
 biography.borrow('Orang Dibalik Apple', 'sahara') 
 biography.borrow('Orang Dibalik Apple', 'sahara') 
 
+perpustakaan.writeFile()
 console.log(perpustakaan.books)
