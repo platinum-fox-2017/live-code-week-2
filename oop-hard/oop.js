@@ -4,8 +4,6 @@ const History = require('./history.js')
 const Reader = require('./reader.js')
 
 const fs = require('fs')
-// const bookList = fs.readFileSync('./data.json', 'utf8')[0]
-// const member = fs.readFileSync('./data.json', 'utf8')[1]
 
 class Perpustakaan {
     constructor (){
@@ -36,26 +34,11 @@ class Perpustakaan {
     }
 }
 
-let udin = {
-    title: 'Jatuh Bangun Seorang Fullstack',
-    author: 'Kang Udin',
-    pages: 89
-}
-
-let bejo = {
-    title: 'Orang Dibalik Apple',
-    author: 'Mas Bejo',
-    pages: 327,
-    figure: 'Steve Wozniak'
-}
-
-let togar = {
-    title: 'Awal Peradaban Callback',
-    author: 'Bang Togar',
-    pages: 127,
-    century: 'Middle Earth' 
-}
-console.log(JSON.stringify([udin, bejo, togar]))
+let library = JSON.parse(fs.readFileSync('./books.json', 'utf8'))
+// Access book from library
+let udin = library[0]
+let bejo = library[1]
+let togar = library[2]
 
 let perpustakaan = new Perpustakaan()
 
@@ -66,25 +49,20 @@ let history = new History(togar)
 console.log(biography.totalPages)   // Banyak halamannya capek ngitungnya
 console.log(journal.totalPages)     // 89
 
+// Adds book to Perpustakaan
 perpustakaan.addBook(journal)
 perpustakaan.addBook(biography)
 perpustakaan.addBook(history)
 
 console.log(perpustakaan.book)
 
-let herby = {
-    name: 'Herby Herado',
-    address: 'BSD City',
-    phone: '6281580802872'
-}
-
-let john = {
-    name: 'John Doe',
-    address: 'Bekasi',
-    phone: '628826861212'
-}
+let profile = JSON.parse(fs.readFileSync('./member.json', 'utf8'))
+// Access profile data
+let herby = profile[0]
+let john = profile[1]
 
 perpustakaan.borrow('Awal Peradaban Callback', herby)
 console.log(perpustakaan.book)
 
-perpustakaan.borrow('Awal Peradaban Callback', john)
+// Validation
+// perpustakaan.borrow('Awal Peradaban Callback', john)

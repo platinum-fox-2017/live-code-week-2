@@ -15,7 +15,7 @@ function generateJajarGenjang (num1, num2){
             let add = (k*2)
             str2 += ' '.repeat(add/2)
         }
-        str2 += '|' + ' '.repeat(num1*2-1) + '|' + '\n'
+        str2 += '\\' + ' '.repeat(num1*2-1) + '\\' + '\n'
     }
     console.log(str2.trimRight())
     // bottom part
