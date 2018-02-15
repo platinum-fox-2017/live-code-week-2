@@ -34,7 +34,7 @@ class Perpustakaan {
         this.books[i].isAvail = false
         this.books[i].peminjam = reader.nama
         reader.books.push(this.books[i])
-        return `Buku ${title} berhasil dipinjam oleh ${reader.nama}`
+        return `Buku ${title} berhasil dipinjam oleh ${reader.namas}`
       }
     }
   fs.writeFileSync('./dataBuku.json',JSON.stringify(this.books))
