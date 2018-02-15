@@ -11,7 +11,11 @@ class Perpustakaan {
     this.pembaca = []
   }
   addBook(classBook){
-    // fs.readFileSync('./buku.json', JSON.parse)
+    let file = fs.readFileSync('./buku.json', 'utf8')
+    let data = JSON.parse(file)
+    for(let i=0; i<data.length; i++){
+      this.book.push(data[i])
+    }
     let book
     if(classBook === 'Journal'){
       book = new Journal
@@ -37,11 +41,17 @@ class Perpustakaan {
     }
   }
   addReader(nama, alamat, notelp){
+    let file = fs.readFileSync('./pembaca.json', 'utf8')
+    let data = JSON.parse(file)
+    for(let i=0; i<data.length; i++){
+      this.pembaca.push(data[i])
+    }
     let reader = new Readers
     reader.nama = nama
     reader.alamat = alamat
     reader.notelp = notelp
     this.pembaca.push(reader)
+    fs.writeFileSync('./pembaca.json', JSON.stringify(this.pembaca), 'utf8')
   }
 }
 

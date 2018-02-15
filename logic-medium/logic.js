@@ -3,9 +3,15 @@ function generateJajarGenjang(panjang, lebar){
   for(let i=0; i<lebar+2; i++){
     let panjangStr = ''
     let space = ''
+    // if(i>1 && i<lebar+2){
+    //   space += ' '
+    // }
     for(let j=0; j<=panjang; j++){
       if(i == 0 || i==lebar+1){
         panjangStr += '- '
+        // if(i>1 && i<lebar+2){
+        //   space += ' '
+        // }
       }
       else {
         if(j == 0 || j == panjang){
@@ -17,6 +23,7 @@ function generateJajarGenjang(panjang, lebar){
       }
     }
     result.push(space+panjangStr)
+
   }
   console.log(result.join('\n'));
 }
