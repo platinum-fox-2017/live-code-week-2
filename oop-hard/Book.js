@@ -1,10 +1,11 @@
 class Book {
-    constructor(title,author,totalPage,readingDays, isAvail) {
+    constructor(title,author,totalPage,readingDays, isAvail,borrowers) {
         this._title         = title;
         this._author        = author;
         this._totalPage     = totalPage;
         this._readingDays   = readingDays;
         this._isAvail       = isAvail;
+        this._borrowers     = borrowers;
     }
 
     get title() {
@@ -29,6 +30,18 @@ class Book {
 
     get isAvail() {
         return this._isAvail;
+    }
+    
+    get borrowers() {
+        return this._borrowers;
+    }
+
+    updateisAvail(newStatus) {
+        this._isAvail = newStatus;
+    }
+
+    updateBorrowers(readers) {
+        this._borrowers = readers;
     }
 }
 
