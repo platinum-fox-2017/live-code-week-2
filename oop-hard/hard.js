@@ -1,9 +1,7 @@
 class Perpustakaan {
-    constructor(title, author, totalPage){
+    constructor(title, author, totalPage, reader){
         this.title = title
         this.author = author
-        this._totalPage = totalPage
-        // this.isAvail = true
     }
 
     addBook(){
@@ -21,12 +19,11 @@ class Perpustakaan {
 class Journal extends Perpustakaan {
     constructor(title, author, totalPage){
         super(title, author, totalPage)
-        // this._title = title
-        // this._author = author
         this._totalPage = totalPage
-        this._isAvail = true
+        this.readingDays = 1
+        this.isAvail = true
     }
-    get totalPage(){
+    get totalPages(){
         return this._totalPage
     }
 }
@@ -34,36 +31,44 @@ class Journal extends Perpustakaan {
 class Biography extends Perpustakaan {
     constructor(title, author, totalPage){
         super(title, author, totalPage)
-        // this._title = title
-        // this._author = author
         this._totalPage = totalPage
-        this._isAvail = true
+        this.readingDays = 4
+        this.isAvail = true
         this._figure = 'Steve Wozniak'
     }
-    get totalPage(){
-        return this._totalPage
+    get totalPages(){
+        return 'Banyak Halaman capek ngitungnya'
     }
 }
 
 class History extends Perpustakaan {
     constructor(title, author, totalPage){
         super(title, author, totalPage)
-        // this._title = title
-        // this._author = author
         this._totalPage = totalPage
-        this._isAvail = true
+        this.readingDays = 2
+        this.isAvail = true
         this._century = 'Middle Earrth'
     }
-    get totalPage(){
+    get totalPages(){
         return this._totalPage
     }
 }
 
+class Readers {
+    constructor(nama, alamat, telp){
+        
+    }
+}
+
+
+let perpustakaan = new Perpustakaan()
+let biography = new Biography()
+let journal = new Journal()
+let history = new History()
 
 //Contoh Test Case
-// console.log(biography.totalPages) // 'Banyak halamannya capek ngitungnya'
-// let journal = new Journal()
-// console.log(journal.totalPages) // 89
-let perpustakaan = new Perpustakaan()
+console.log(biography.totalPages) // 'Banyak halamannya capek ngitungnya'
+console.log(journal.totalPages) // 89
+
 perpustakaan.addBook()
 console.log(perpustakaan.book)
