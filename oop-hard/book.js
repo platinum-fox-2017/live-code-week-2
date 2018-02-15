@@ -14,16 +14,22 @@ class Book {
         return this._totalPages;
     }
     static borrow(judulBuku,namaPembaca){
-        // console.log(judulBuku);
-        // console.log(judulBuku.isAvail);
-        // console.log(namaPembaca);
-        // console.log(namaPembaca.nama);
+        let counter =0;
         if(judulBuku.isAvail === false){
             console.log('Buku dalam keadaan dipinjam');
         } else if (judulBuku.isAvail === true){
-            judulBuku.isAvail = false;
-            judulBuku.peminjam = namaPembaca.nama;
-            console.log('Buku berhasil dipinjam');
+            for(let i=0; i<perpustakaan.pembaca.length; i++){
+                if(perpustakaan.pembaca[i].nama === namaPembaca.nama){
+                    judulBuku.isAvail = false;
+                    judulBuku.peminjam = namaPembaca.nama;
+                    console.log('Buku berhasil dipinjam');
+                } else {
+                    counter += 1;
+                }
+            }
+            if(counter === perpustakaan.pembaca.length){
+                console.log('Daftar jadi member dulu')
+            }
         }
     }
 }

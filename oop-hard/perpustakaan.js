@@ -29,17 +29,22 @@ class Book {
         return this._totalPages;
     }
     static borrow(judulBuku,namaPembaca){
-        console.log(judulBuku);
-        // console.log(judulBuku.isAvail);
-        console.log(namaPembaca);
-        // console.log(namaPembaca.nama);
-        console.log(Perpustakaan.pembaca);
+        let counter =0;
         if(judulBuku.isAvail === false){
-            // console.log('Buku dalam keadaan dipinjam');
+            console.log('Buku dalam keadaan dipinjam');
         } else if (judulBuku.isAvail === true){
-            judulBuku.isAvail = false;
-            judulBuku.peminjam = namaPembaca.nama;
-            // console.log('Buku berhasil dipinjam');
+            for(let i=0; i<perpustakaan.pembaca.length; i++){
+                if(perpustakaan.pembaca[i].nama === namaPembaca.nama){
+                    judulBuku.isAvail = false;
+                    judulBuku.peminjam = namaPembaca.nama;
+                    console.log('Buku berhasil dipinjam');
+                } else {
+                    counter += 1;
+                }
+            }
+            if(counter === perpustakaan.pembaca.length){
+                console.log('Daftar jadi member dulu')
+            }
         }
     }
 }
@@ -99,18 +104,18 @@ class Readers {
         this.notelp = notelp;
     }
 }
-let dennis = new Readers('Dennis','Lebak Bulus','123');
+let dennis = new Readers('dennis','Lebak Bulus','123');
 // console.log(dennis);
 
 Book.borrow(journal,dennis);
 // console.log(journal);
 perpustakaan.addReader(dennis);
+Book.borrow(journal,dennis);
 
-// console.log(perpustakaan.pembaca[0].nama);
 
 
-// ### RELEASE 2
+
+
+// ### RELEASE 3
 // - Pisahkan masing-masih class menjadi 1 class 1 file
 // - input data buku dan peminjam kedalam file json
-// - buatlah method addReader untuk menginput object pembaca kedalam property perpustakaan
-// - tambahkan validasi didalam method borrow untuk memvalidasi apakah pembaca ada didalam list pembaca. jika nama tidak ada didalam list object pembaca maka method akan mereturn 'Daftar jadi member dulu'
