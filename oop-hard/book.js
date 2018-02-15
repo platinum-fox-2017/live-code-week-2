@@ -5,6 +5,7 @@ class Books {
     this.totalPages = totalPages
     this.readingDays = Math.ceil(totalPages/100)
     this.isAvail = true
+    this.peminjam = null
   }
 }
 

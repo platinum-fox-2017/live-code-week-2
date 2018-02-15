@@ -76,7 +76,7 @@ output akan seperti ini:
     _totalPages: 127,
     readingDays: 2,
     isAvail: true,
-    century: 'Middle Earth' } ]
+    century: 'Middle Earth' } ]																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														
 ```
 
 ### RELEASE 1
