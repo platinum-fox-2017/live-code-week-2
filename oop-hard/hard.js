@@ -18,7 +18,7 @@ let readerC = new ReadersObj('Irsyad', 'Jalan Megaroad', 08592348712);
 let readerD = new ReadersObj('Herby', 'Jalan Rainbow', 08439567129);
 let readerE = new ReadersObj('Ryan', 'Jalan apples', 08456967129);
 
-let bookCollection =  [ journal, biography, history];
+let bookCollection =  [journal, biography, history];
 let readers = [readerA, readerB, readerC];
 
 // console.log(bookCollection);
@@ -26,7 +26,7 @@ let readers = [readerA, readerB, readerC];
 // console.log(history.totalPages)
 // console.log(journal.totalPages)
 
-let perpustakaan = new Perpustakaan(bookCollection, readers);
+let perpustakaan = new Perpustakaan(bookCollection, readers, 'Pondok Indah', 'Perpustakaan Javascript');
 
 perpustakaan.borrow('Orang Dibalik Apple', readerA.name);
 perpustakaan.borrow('Orang Dibalik Apple', readerB.name);

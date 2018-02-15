@@ -25,4 +25,4 @@ class JSONparser {
   }
 }
 
-module.exports = JSONparser
+module.exports = JSONparser;

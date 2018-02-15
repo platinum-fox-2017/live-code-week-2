@@ -7,4 +7,4 @@ class Biography extends Book {
   }
 }
 
-module.exports = Biography
+module.exports = Biography;

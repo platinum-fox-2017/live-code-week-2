@@ -6,4 +6,4 @@ class Journal extends Book {
   }
 }
 
-module.exports = Journal
+module.exports = Journal;

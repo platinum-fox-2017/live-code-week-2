@@ -8,4 +8,4 @@ class Readers {
   }
 }
 
-module.exports = Readers
+module.exports = Readers;

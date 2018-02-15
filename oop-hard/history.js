@@ -7,4 +7,4 @@ class HistoryBook extends Book {
   }
 }
 
-module.exports = HistoryBook
+module.exports = HistoryBook;
