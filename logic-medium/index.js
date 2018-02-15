@@ -41,3 +41,5 @@ function generateJajarGenjang(panjang,lebar){
 }
 
 generateJajarGenjang(2,4)
+generateJajarGenjang(4,4)
+generateJajarGenjang(5,3)
