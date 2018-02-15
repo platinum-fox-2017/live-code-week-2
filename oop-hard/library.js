@@ -2,6 +2,10 @@ class Library{
     constructor(reader){
         this._reader = reader
     }
+
+    checkBook(){
+
+    }
 }
 
 class Readers extends Library{
@@ -12,14 +16,14 @@ class Readers extends Library{
 }
 
 class Book extends Library{
-    constructor(title, author, page, readTime, status,reader){
+    constructor(title, author, page, readTime, status, reader){
         super(reader)
         
         this._title = title
         this._author = author
         this._page = page
         this._readTime= this.readTime()
-        this._status = true
+        this._isAvail = this.checkBorrow()
     }
 
     checkPage(){
@@ -33,9 +37,19 @@ class Book extends Library{
         return result
     }
 
-    readTime(){
+    readTime(status){
         let result = Math.ceil(this._page/100)
         return result
+    }
+
+    checkBorrow(){
+        let result = ''
+        if(this._isAvail === true){
+            result += 'Buku Berhasil Dipinjam'
+        }
+        else{
+            result += 'Buku Sudah Dipinjam'
+        }
     }
 
 }
@@ -52,7 +66,7 @@ class Biography extends Book{
     constructor(title, author, page, readTime, figure){
         super(title, author, page, readTime)
         this._figure = figure
-        this._status = false
+        this._isAvail = false
         this._page = this.checkPage()
     }
 

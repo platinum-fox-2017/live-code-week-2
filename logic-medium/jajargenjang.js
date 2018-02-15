@@ -15,12 +15,21 @@ function JajarGenjang(horizontal, vertical){
                 }
             }
             else{
-                
-          
+                if(j === count || j === hor ){
+                    res_temp.push('/')
+                }
+                else{
+                    res_temp.push(' ')
+                }
             }
         }
+        result.push(res_temp.join(''))
+        count ++
+        hor ++
     }   
-    return result
+    return result.join('\n')
 }
 
 console.log(JajarGenjang(5,4))
+console.log(JajarGenjang(3,3))
+console.log(JajarGenjang(2,4))
