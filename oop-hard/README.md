@@ -81,8 +81,8 @@ output akan seperti ini:
 
 ### RELEASE 1
 untuk sekarang perpustakaan telah dibuka sekarang pembaca bisa mendaftar didalam perpustakaan
-  - Tambahkan property pembaca didalam perpustakaan
-  - buatlah class Readers untuk membuat object pembaca yang memiliki property nama, alamat, notelp.
+  - Tambahkan property pembaca didalam perpustakaan x
+  - buatlah class Readers untuk membuat object pembaca yang memiliki property nama, alamat, notelp. x
   - Tambahkan property peminjam di dalam buku yang akan mencatat nama si peminjam didalam buku.
   - tambahkan property isAvail kedalam buku yang akan mencatat status buku tersebut sedang dipinjam atau tidak
   - buatlah sebuat method yang meng handle peminjaman buku. method ini akan melakukan validasi apakah buku tersebut dalam keadaan dipinjam atau tidak jika buku dalam keadaan dipinjam maka akan mereturn 'Buku dalam keadaan dipinjam' jika status buku boleh dipinjam maka dia akan menginput nama pembaca kedalam property peminjam dan status isAvail akan berubah.
@@ -94,6 +94,10 @@ untuk sekarang perpustakaan telah dibuka sekarang pembaca bisa mendaftar didalam
   xxxx.borrow([judulBuku], [namaPembaca]) // Buku Sudah Dipinjam
   ```
 
-  ### RELEASE 2
+### RELEASE 2
+  - buatlah method addReader untuk menginput object pembaca kedalam property perpustakaan
+  - tambahkan validasi didalam method borrow untuk memvalidasi apakah pembaca ada didalam list   pembaca. jika nama tidak ada didalam list object pembaca maka method akan mereturn 'Daftar jadi member dulu'
+
+### RELEASE 3
   - Pisahkan masing-masih class menjadi 1 class 1 file
   - input data buku dan peminjam kedalam file json
