@@ -89,11 +89,38 @@ untuk sekarang perpustakaan telah dibuka sekarang pembaca bisa mendaftar didalam
 
   contoh test Case
   ```javascript
-  xxxx.borrow([judulBuku], [namaPembaca]) // Buku Berhasil Dipinjam
-  // atau
-  xxxx.borrow([judulBuku], [namaPembaca]) // Buku Sudah Dipinjam
+  xxxx.borrow('Orang Dibalik Apple', [namaPembaca]) // Buku Berhasil Dipinjam
+  xxxx.borrow('Orang Dibalik Apple', [namaPembaca]) // Buku Sudah Dipinjam  
   ```
-
+  ```javascript
+  console.log(perpustakaan.book)
+  ```
+  output akan seperti ini:
+  ```
+  [ Journal {
+      title: 'Jatuh Bangung Seorang Fullstack',
+      author: 'Kang Udin',
+      _totalPages: 89,
+      readingDays: 1,
+      isAvail: true,
+      borrower: '' },
+    Biography {
+      title: 'Orang Dibalik Apple',
+      author: 'Mas Bejo',
+      _totalPages: 327,
+      readingDays: 4,
+      isAvail: false,
+      figure: 'Steve Wozniak',
+      borrower: 'Kang Tatang' },
+    History {
+      title: 'Awal Peradaban Callback',
+      author: 'Bang Togar',
+      _totalPages: 127,
+      readingDays: 2,
+      isAvail: true,
+      century: 'Middle Earth',
+      borrower: '' } ]
+  ```
   ### RELEASE 2
   - Pisahkan masing-masih class menjadi 1 class 1 file
   - input data buku dan peminjam kedalam file json
