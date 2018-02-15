@@ -8,21 +8,14 @@ function JajarGenjang(horizontal, vertical){
         for (let j = 0; j < vertical+horizontal; j++) {
             if(i === 0 || i === vertical-1){
                 if(j >= count && j <= hor){
-                    res_res_temp.push('-')
+                    res_temp.push('-')
                 } 
                 else {
-                    res_res_temp.push(' ')
+                    res_temp.push(' ')
                 }
             }
             else{
-                if(j === count || j === count2){
-                    res_temp.push('|')
-                  } else {
-                    res_temp.push(' ')
-                  }
-                }
-              }
-              
+                
           
             }
         }
