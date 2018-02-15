@@ -1,4 +1,5 @@
-const Readers = require('./readers');
+const Readers = require('./readers')
+const Perpustakaan = require('./perpustakaan')
 let reader = new Readers
 
 class Book {

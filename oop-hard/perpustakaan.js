@@ -1,8 +1,9 @@
-// const Book = require('./book');
+const Book = require('./book');
 const Journal = require('./journal');
 const Biography = require('./biography');
 const History = require('./history');
 const Readers = require('./readers');
+const fs = require('fs');
 
 class Perpustakaan {
   constructor() {
@@ -10,6 +11,7 @@ class Perpustakaan {
     this.pembaca = []
   }
   addBook(classBook){
+    // fs.readFileSync('./buku.json', JSON.parse)
     let book
     if(classBook === 'Journal'){
       book = new Journal
@@ -21,6 +23,7 @@ class Perpustakaan {
       book = new History
     }
     this.book.push(book)
+    fs.writeFileSync('./buku.json', JSON.stringify(this.book), 'utf8')
   }
   borrow(judulBuku, namaPembaca){
     this.title = judulBuku

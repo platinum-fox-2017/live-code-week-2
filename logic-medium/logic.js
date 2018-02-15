@@ -16,7 +16,7 @@ function generateJajarGenjang(panjang, lebar){
         }
       }
     }
-    result.push(panjangStr)
+    result.push(space+panjangStr)
   }
   console.log(result.join('\n'));
 }
