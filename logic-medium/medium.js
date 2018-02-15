@@ -14,7 +14,6 @@ function generateJajarGenjang(num1, num2) {
       else {
         space += ' '
         temp += space + '|      |' + '\n'
-
       }
     }
   }
@@ -30,3 +29,4 @@ function generateJajarGenjang(num1, num2) {
 
 console.log(generateJajarGenjang(5,4))
 console.log(generateJajarGenjang(3,3))
+console.log(generateJajarGenjang(2,4))
