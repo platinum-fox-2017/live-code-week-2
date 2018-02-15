@@ -3,11 +3,6 @@
 class PerpustakaanJavascript{
     constructor(){
         this.alamat = 'Pondok Indah'
-        this.book = []
-    }
-
-    assignGenre(){
-        this.book.push(name)
     }
 }
 
@@ -18,8 +13,9 @@ class Book{
         this.totalPages
         this.readingDays
         this.isAvail
-        this.bookGenre
     }
+
+    assignBook()
 }
 
 class Journal extends Book{
@@ -67,5 +63,7 @@ let history = {
 }
 
 let Books = new Book()
-let Journals = new Journal()
-console.log()
+let test = new Journal()
+
+
+console.log(journal)
