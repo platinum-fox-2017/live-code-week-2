@@ -23,3 +23,7 @@ generateJajarGenjang(5,4)
 generateJajarGenjang(3,3)
 generateJajarGenjang(2,4)
 
+
+// |   |
+//   |   |
+//     |   |
