@@ -22,7 +22,7 @@ function generateJajarGenjang(num1, num2) {
       }
       else {
         space += ' '
-        temp += space + '|     |' + '\n'
+        temp += space + '|      |' + '\n'
       }
     }
   }
