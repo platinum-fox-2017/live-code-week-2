@@ -1,3 +1,4 @@
+let arrmember =[] 
 class Book{
     constructor(title, author, total_page){
         this.title = title
@@ -8,19 +9,22 @@ class Book{
         this.isAvail = true
     }
     addMember(member){
-        let arr = []
-        arr.push(member)
-        return arr
+        arrmember.push(member)
+        return arrmember
     }
     borrow(title, borrower){
-        member = this.addMember()
-        if(this.title === title && this.isAvail===true){
-            this.borrower = borrower
-            this.isAvail = false
-            console.log('Buku Berhasil Dipinjam')
+        if(arrmember.indexOf(borrower)===0){
+            if(this.title === title && this.isAvail===true){
+                this.borrower = borrower
+                this.isAvail = false
+                console.log('Buku Berhasil Dipinjam')
+            }else{
+                console.log('Buku dalam keadaan dipinjam')
+            }
         }else{
-            console.log('Buku dalam keadaan dipinjam')
+            console.log('Daftar jadi member dulu')
         }
+        
     }
 }
 

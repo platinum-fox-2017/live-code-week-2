@@ -24,7 +24,9 @@ perpustakaan.addReader(zakia)
 perpustakaan.addReader(komara)
 
 //console.log(perpustakaan.readers)
+let book = new Book()
+biography.addMember('sahara')
 biography.borrow('Orang Dibalik Apple', 'sahara') 
 biography.borrow('Orang Dibalik Apple', 'sahara') 
 
-//console.log(biography)
+console.log(perpustakaan.books)
